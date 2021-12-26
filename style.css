@@ -1,0 +1,245 @@
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+html,
+body {
+    height: 100%;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    background-color: #010920;
+}
+
+.todo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 100%;
+    padding: 162px 15px 0px 15px;
+}
+
+.todo__container {
+    margin: 20px auto;
+    position: relative;
+    max-width: 420px;
+    width: 100%;
+    height: 100%;
+}
+
+.todo__box {
+    margin: 0 auto;
+    padding: 30px;
+    max-width: 420px;
+    width: 100%;
+    min-height: 540px;
+    background: #252E42;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 0 20px 0;
+}
+
+.todo__rect-one {
+    width: 94%;
+    height: 67.97px;
+    background: #31394D;
+    border-radius: 20px;
+    transform: rotate(-2.32deg);
+    position: absolute;
+    z-index: 5;
+    left: 1px;
+    top: -16px;
+}
+
+.todo__rect-two {
+    width: 82%;
+    height: 85.23px;
+    background: #4F5565;
+    border-radius: 20px;
+    transform: rotate(-4.48deg);
+    position: absolute;
+    z-index: 2;
+    left: 2px;
+    top: -27px;
+}
+
+.todo__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 0px 20px 0px;
+}
+
+.todo__title {
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 34px;
+}
+
+.todo__add-button {
+    background: #FF8469;
+    border-radius: 7px;
+    font-family: inherit;
+    text-transform: uppercase;
+    color: inherit;
+    font-size: 14px;
+    line-height: 17px;
+    cursor: pointer;
+    width: 54px;
+    height: 27px;
+    transition: 0.2s linear;
+}
+
+.todo__add-button:hover {
+    background: #D95133;
+}
+
+.todo__list {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.todo__item {
+    padding: 8.5px 0;
+}
+
+.todo__item:first-child {
+    padding: 9px 0 8.5px 0;
+}
+
+.todo__item:last-child {
+    padding: 9px 0 0 0;
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    min-height: 20px;
+}
+
+.checkbox__input {
+    display: none;
+}
+
+.checkbox__text {
+    padding: 0px 0px 0px 35px;
+    width: 100%;
+    position: relative;
+    transition: 0.2s linear;
+}
+
+.checkbox__text::before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 99;
+    transform: translate(0, -50%);
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: #4F5565;
+    border-radius: 6px;
+    transition: .2s linear;
+}
+
+.checkbox__text::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 4px;
+    z-index: 100;
+    transform: translate(0, -50%);
+    background-image: url("Vector.svg");
+    background-repeat: no-repeat;
+    width: 12px;
+    height: 12px;
+    opacity: 0;
+    transition: .2s linear;
+}
+
+.checkbox__input:checked+.checkbox__text::after {
+    opacity: 1;
+}
+
+.checkbox__input:checked+.checkbox__text::before {
+    background: #FF8469;
+}
+
+.checkbox__text:hover::before {
+    background: rgba(255, 132, 105, 0.2);
+}
+
+.item__title {}
+
+.item__description {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+    color: #4F5565;
+    white-space: nowrap;
+    position: relative;
+}
+
+.close {
+    text-decoration-line: line-through;
+    color: #4F5565;
+}
+
+.item__description::after {
+    content: "";
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
+    width: 65px;
+    height: 100%;
+    background: linear-gradient(to right, rgba(79, 85, 101, 0), #252E42 80%);
+    pointer-events: none;
+}
+
+.todo__copyright {
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 20px;
+    color: #252E42;
+}
